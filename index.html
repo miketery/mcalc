@@ -3,30 +3,49 @@
   <head>
     <title>MCalc</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="bower_components/financejs/finance.js"></script>
-    <script src="script.js"></script>
+    <script src="/bower_components/financejs/finance.js"></script>
+    <script src="/script.js"></script>
+    <link rel="stylesheet" href="/style/tachyons.css"/>
+    <link rel="stylesheet" href="/style/style.css"/>
   </head>
-  <body>
-    <h3>MCalc</h3>
-    <p>Start Calculating</p>
-    <div class="calc">
+  <body class="bg-green">
+    <div class="f2 ma2 b">M.Calc</div>
+    <div class="main ma2 pa2 bg-white shadow-2 pl3">
+      <div class="mv2">Calculate your mortgage payments</div>
       <form id="calc">
-        <div class="principal">
-          <input class="aaa" type="text" name="principal" value="350000"/>
-          <label>principal</label>
+        <div class="flex flex-row">
+          <div class="sub principal relative">
+            <label>principal</label>
+            <input class="pl3" type="text" name="principal"/>
+            <div class="dollarsign">$</div>
+          </div>
+          <div class="sub rate">
+            <label>intrest (%)</label>
+            <input type="text" name="rate"/>
+          </div>
+          <div class="sub periods">
+            <label>years </label>
+            <input type="text" name="periods"/>
+          </div>
         </div>
-        <div class="rate">
-          <input type="text" name="rate" value="3.25"/>
-          <label>rate</label>
-        </div>
-        <div class="periods">
-          <input type="text" name="periods" value="32"/>
-          <label>years </label>
+        <div class="flex flex-row mt3">
+          <div class="dib fl1 mt1">
+            <button class="bn bg-red white pa2 tc fl shadow-2" type="submit">To table</button>
+          </div>
+          <div class="results fl3 relative">
+            <div class="dib f2 fl1 fr" id="annuity"></div>
+          </div>
+          <div class="dib f6 fl1 mt1 tr pr3">
+            <div>Payment</div>
+            <div>(monthly)</div>
+          </div>
         </div>
       </form>
     </div>
-    <div class="results">
-      <div class="annuity"> </div>
+    <div class="table">
+      <div class="row hidden template">
+        <div class="cell"> </div>
+      </div>
     </div>
   </body>
 </html>

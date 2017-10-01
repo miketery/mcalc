@@ -1,24 +1,36 @@
 extends includes/layout.pug
 block scripts
   script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
-  script(src='bower_components/financejs/finance.js')
-  script(src='script.js')
+  script(src='/bower_components/financejs/finance.js')
+  script(src='/script.js')
+  link(rel='stylesheet', href='/style/tachyons.css')
+  link(rel='stylesheet', href='/style/style.css')
 block title
   title MCalc
 block content
-  h3 MCalc
-  p Start Calculating
-  .calc
+  .f2.ma2.b M.Calc
+  .main.ma2.pa2.bg-white.shadow-2.pl3
+    .mv2 Calculate your mortgage payments
     form#calc
-      .principal
-        input(type='text' name='principal' value='350000' class='aaa')
-        label principal
-      .rate
-        input(type='text' name='rate' value='3.25')
-        label rate
-      .periods
-        input(type='text' name='periods' value='32')
-        label years 
-  .results
-    .annuity 
-
+      div.flex.flex-row
+        .sub.principal.relative
+          label principal
+          input(type='text' name='principal').pl3
+          .dollarsign $
+        .sub.rate
+          label intrest (%)
+          input(type='text' name='rate')
+        .sub.periods
+          label years 
+          input(type='text' name='periods')
+      div.flex.flex-row.mt3
+        .dib.fl1.mt1
+          button(type='submit').bn.bg-red.white.pa2.tc.fl.shadow-2 To table
+        .results.fl3.relative
+          #annuity.dib.f2.fl1.fr
+        .dib.f6.fl1.mt1.tr.pr3
+          div Payment
+          div (monthly)
+  .table
+    .row.hidden.template
+      .cell 
