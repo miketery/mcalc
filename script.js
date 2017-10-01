@@ -14,9 +14,13 @@ $(document).ready(function() {
   $('input[name="rate"]').val(data['rate']);
   $('input[name="periods"]').val(data['periods']);
 
-  $('form#calc input').change(function() {
+  $('#calc input').change(function() {
     data[$(this).attr('name')] = parseFloat($(this).val());
     $('#annuity').text('$ '+calculate());
+  });
+
+  $('form#calc').submit(function() {
+    console.log("Test submit");
   });
 
 

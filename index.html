@@ -8,36 +8,43 @@
     <link rel="stylesheet" href="/style/tachyons.css"/>
     <link rel="stylesheet" href="/style/style.css"/>
   </head>
-  <body class="bg-lightest-blue navy">
-    <div class="main pa2">
-      <div class="f2">MCalc</div>
-      <p>Start Calculating</p>
+  <body class="bg-green">
+    <div class="f2 ma2 b">M.Calc</div>
+    <div class="main ma2 pa2 bg-white shadow-2 pl3">
+      <div class="mv2">Calculate your mortgage payments</div>
       <form id="calc">
-        <div class="sub principal dib pr2 relative">
-          <label>principal</label>
-          <input class="pl3" type="text" name="principal"/>
-          <div class="dollarsign">$</div>
+        <div class="flex flex-row">
+          <div class="sub principal relative">
+            <label>principal</label>
+            <input class="pl3" type="text" name="principal"/>
+            <div class="dollarsign">$</div>
+          </div>
+          <div class="sub rate">
+            <label>intrest (%)</label>
+            <input type="text" name="rate"/>
+          </div>
+          <div class="sub periods">
+            <label>years </label>
+            <input type="text" name="periods"/>
+          </div>
         </div>
-        <div class="sub rate dib pr2">
-          <label>intrest (%)</label>
-          <input type="text" name="rate"/>
-        </div>
-        <div class="sub periods dib pr2">
-          <label>years </label>
-          <input type="text" name="periods"/>
+        <div class="flex flex-row mt3">
+          <div class="dib fl1 mt1">
+            <button class="bn bg-red white pa2 tc fl shadow-2" type="submit">To table</button>
+          </div>
+          <div class="results fl3 relative">
+            <div class="dib f2 fl1 fr" id="annuity"></div>
+          </div>
+          <div class="dib f6 fl1 mt1 tr pr3">
+            <div>Payment</div>
+            <div>(monthly)</div>
+          </div>
         </div>
       </form>
-      <div class="flex flex-row">
-        <div class="results fl4 relative mr2">
-          <div class="dib f2 fl1 tr" id="annuity"></div>
-        </div>
-        <div class="dib ml1 f5 fl1">
-          <div>Payment</div>
-          <div>(monthly)</div>
-        </div>
-        <div class="dib fl1 va">
-          <div class="bg-orange white pa2 tc" id="tolist">To table</div>
-        </div>
+    </div>
+    <div class="table">
+      <div class="row hidden template">
+        <div class="cell"> </div>
       </div>
     </div>
   </body>

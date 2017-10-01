@@ -8,25 +8,29 @@ block scripts
 block title
   title MCalc
 block content
-  .main.pa2
-    .f2 MCalc
-    p Start Calculating
+  .f2.ma2.b M.Calc
+  .main.ma2.pa2.bg-white.shadow-2.pl3
+    .mv2 Calculate your mortgage payments
     form#calc
-      .sub.principal.dib.pr2.relative
-        label principal
-        input(type='text' name='principal').pl3
-        .dollarsign $
-      .sub.rate.dib.pr2
-        label intrest (%)
-        input(type='text' name='rate')
-      .sub.periods.dib.pr2
-        label years 
-        input(type='text' name='periods')
-    div.flex.flex-row
-      .results.fl4.relative.mr2
-        #annuity.dib.f2.fl1.tr
-      .dib.ml1.f5.fl1
-        div Payment
-        div (monthly)
-      .dib.fl1.va
-        #tolist.bg-orange.white.pa2.tc To table
+      div.flex.flex-row
+        .sub.principal.relative
+          label principal
+          input(type='text' name='principal').pl3
+          .dollarsign $
+        .sub.rate
+          label intrest (%)
+          input(type='text' name='rate')
+        .sub.periods
+          label years 
+          input(type='text' name='periods')
+      div.flex.flex-row.mt3
+        .dib.fl1.mt1
+          button(type='submit').bn.bg-red.white.pa2.tc.fl.shadow-2 To table
+        .results.fl3.relative
+          #annuity.dib.f2.fl1.fr
+        .dib.f6.fl1.mt1.tr.pr3
+          div Payment
+          div (monthly)
+  .table
+    .row.hidden.template
+      .cell 
