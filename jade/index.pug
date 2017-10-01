@@ -8,19 +8,25 @@ block scripts
 block title
   title MCalc
 block content
-  .container.pa2
+  .main.pa2
     .f2 MCalc
     p Start Calculating
     form#calc
-      .principal.dib.mr2
+      .sub.principal.dib.pr2.relative
         label principal
-        input(type='text' name='principal')
-      .rate.dib.mr2
+        input(type='text' name='principal').pl3
+        .dollarsign $
+      .sub.rate.dib.pr2
         label intrest (%)
         input(type='text' name='rate')
-      .periods.dib
+      .sub.periods.dib.pr2
         label years 
         input(type='text' name='periods')
-    .results
-      .dib.ttc.mr3.f5 payment amount
-      #annuity.dib.f2
+    div.flex.flex-row
+      .results.fl4.relative.mr2
+        #annuity.dib.f2.fl1.tr
+      .dib.ml1.f5.fl1
+        div Payment
+        div (monthly)
+      .dib.fl1.va
+        #tolist.bg-orange.white.pa2.tc To table

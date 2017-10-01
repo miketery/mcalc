@@ -9,26 +9,35 @@
     <link rel="stylesheet" href="/style/style.css"/>
   </head>
   <body class="bg-lightest-blue navy">
-    <div class="container pa2">
+    <div class="main pa2">
       <div class="f2">MCalc</div>
       <p>Start Calculating</p>
       <form id="calc">
-        <div class="principal dib mr2">
+        <div class="sub principal dib pr2 relative">
           <label>principal</label>
-          <input type="text" name="principal"/>
+          <input class="pl3" type="text" name="principal"/>
+          <div class="dollarsign">$</div>
         </div>
-        <div class="rate dib mr2">
+        <div class="sub rate dib pr2">
           <label>intrest (%)</label>
           <input type="text" name="rate"/>
         </div>
-        <div class="periods dib">
+        <div class="sub periods dib pr2">
           <label>years </label>
           <input type="text" name="periods"/>
         </div>
       </form>
-      <div class="results">
-        <div class="dib ttc mr3 f5">payment amount</div>
-        <div class="dib f2" id="annuity"></div>
+      <div class="flex flex-row">
+        <div class="results fl4 relative mr2">
+          <div class="dib f2 fl1 tr" id="annuity"></div>
+        </div>
+        <div class="dib ml1 f5 fl1">
+          <div>Payment</div>
+          <div>(monthly)</div>
+        </div>
+        <div class="dib fl1 va">
+          <div class="bg-orange white pa2 tc" id="tolist">To table</div>
+        </div>
       </div>
     </div>
   </body>
