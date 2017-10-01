@@ -1,0 +1,24 @@
+extends includes/layout.pug
+block scripts
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+  script(src='bower_components/financejs/finance.js')
+  script(src='script.js')
+block title
+  title MCalc
+block content
+  h3 MCalc
+  p Start Calculating
+  .calc
+    form#calc
+      .principal
+        input(type='text' name='principal' value='350000' class='aaa')
+        label principal
+      .rate
+        input(type='text' name='rate' value='3.25')
+        label rate
+      .periods
+        input(type='text' name='periods' value='32')
+        label years 
+  .results
+    .annuity 
+
