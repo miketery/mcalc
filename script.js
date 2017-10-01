@@ -8,11 +8,15 @@ function calculate() {
 }
 
 $(document).ready(function() {
-  $('.annuity').text(calculate());
+  $('#annuity').text(calculate());
+  $('#annuity').innerHTML = calculate();
+  $('input[name="principal"]').val(data['principal']);
+  $('input[name="rate"]').val(data['rate']);
+  $('input[name="periods"]').val(data['periods']);
 
   $('form#calc input').change(function() {
     data[$(this).attr('name')] = parseFloat($(this).val());
-    $('.annuity').text(calculate());
+    $('#annuity').text(calculate());
   });
 
 

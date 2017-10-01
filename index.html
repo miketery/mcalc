@@ -3,30 +3,33 @@
   <head>
     <title>MCalc</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="bower_components/financejs/finance.js"></script>
-    <script src="script.js"></script>
+    <script src="/bower_components/financejs/finance.js"></script>
+    <script src="/script.js"></script>
+    <link rel="stylesheet" href="/style/tachyons.css"/>
+    <link rel="stylesheet" href="/style/style.css"/>
   </head>
-  <body>
-    <h3>MCalc</h3>
-    <p>Start Calculating</p>
-    <div class="calc">
+  <body class="bg-lightest-blue navy">
+    <div class="container pa2">
+      <div class="f2">MCalc</div>
+      <p>Start Calculating</p>
       <form id="calc">
-        <div class="principal">
-          <input class="aaa" type="text" name="principal" value="350000"/>
+        <div class="principal dib mr2">
           <label>principal</label>
+          <input type="text" name="principal"/>
         </div>
-        <div class="rate">
-          <input type="text" name="rate" value="3.25"/>
-          <label>rate</label>
+        <div class="rate dib mr2">
+          <label>intrest (%)</label>
+          <input type="text" name="rate"/>
         </div>
-        <div class="periods">
-          <input type="text" name="periods" value="32"/>
+        <div class="periods dib">
           <label>years </label>
+          <input type="text" name="periods"/>
         </div>
       </form>
-    </div>
-    <div class="results">
-      <div class="annuity"> </div>
+      <div class="results">
+        <div class="dib ttc mr3 f5">payment amount</div>
+        <div class="dib f2" id="annuity"></div>
+      </div>
     </div>
   </body>
 </html>

@@ -1,24 +1,26 @@
 extends includes/layout.pug
 block scripts
   script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
-  script(src='bower_components/financejs/finance.js')
-  script(src='script.js')
+  script(src='/bower_components/financejs/finance.js')
+  script(src='/script.js')
+  link(rel='stylesheet', href='/style/tachyons.css')
+  link(rel='stylesheet', href='/style/style.css')
 block title
   title MCalc
 block content
-  h3 MCalc
-  p Start Calculating
-  .calc
+  .container.pa2
+    .f2 MCalc
+    p Start Calculating
     form#calc
-      .principal
-        input(type='text' name='principal' value='350000' class='aaa')
+      .principal.dib.mr2
         label principal
-      .rate
-        input(type='text' name='rate' value='3.25')
-        label rate
-      .periods
-        input(type='text' name='periods' value='32')
+        input(type='text' name='principal')
+      .rate.dib.mr2
+        label intrest (%)
+        input(type='text' name='rate')
+      .periods.dib
         label years 
-  .results
-    .annuity 
-
+        input(type='text' name='periods')
+    .results
+      .dib.ttc.mr3.f5 payment amount
+      #annuity.dib.f2
