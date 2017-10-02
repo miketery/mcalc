@@ -19,7 +19,8 @@ $(document).ready(function() {
     $('#annuity').text('$ '+calculate());
   });
 
-  $('form#calc').submit(function() {
+  $('form#calc').submit(function(e) {
+    e.preventDefault();
     console.log("Test submit");
   });
 
