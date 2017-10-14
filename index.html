@@ -1,14 +1,15 @@
-
+<!DOCTYPE html>
 <html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <head><meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+<meta content="utf-8" http-equiv="encoding">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MCalc</title>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
     <script src="bower_components/financejs/finance.js"></script>
     <script src="script.js"></script>
-    <link rel="stylesheet" href="style/tachyons.css"/>
-    <link rel="stylesheet" href="style/style.css"/>
+    <link rel="stylesheet" href="style/tachyons.css">
+    <link rel="stylesheet" href="style/style.css">
   </head>
   <body class="bg-green">
     <div class="f2 mv2 b heading center">M.Calc</div>
@@ -18,16 +19,16 @@
         <div class="flex flex-row">
           <div class="sub principal relative">
             <label>principal</label>
-            <input class="pl3" type="text" name="principal"/>
+            <input class="pl3" type="text" name="principal">
             <div class="dollarsign">$</div>
           </div>
           <div class="sub rate">
             <label>intrest (%)</label>
-            <input type="text" name="rate"/>
+            <input type="text" name="rate">
           </div>
           <div class="sub periods">
             <label>years </label>
-            <input type="text" name="periods"/>
+            <input type="text" name="periods">
           </div>
         </div>
         <div class="flex flex-row mt3">
@@ -42,6 +43,6 @@
         </div>
       </form>
     </div>
-    <div class="table"></div>
+    <div id="range-table"></div>
   </body>
 </html>
