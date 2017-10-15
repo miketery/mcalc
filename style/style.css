@@ -28,3 +28,11 @@ label {
 .fl2 {flex:2;}
 .fl3 {flex:3;}
 .fl4 {flex:4;}
+
+#range-table {max-width: 450px;}
+#range-table table {display: table; table-layout: fixed; width: 100%; text-align: right; border-collapse: collapse;}
+#range-table table tbody tr:first-child {font-weight:bold; background: #eee;}
+#range-table td { flex-grow: 1; padding-top: 0.5em; padding-bottom: 0.5em; } 
+#range-table tr td:first-child {flex-grow: 2;} 
+#range-table tr td:last-child {padding-right: 0.5em;} 
+/* #range-table td.highlight {barkground: } */

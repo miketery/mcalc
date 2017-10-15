@@ -32,7 +32,8 @@ function calculate_table() {
   console.log(table);
   let trs = [];
   for(let i = 0; i < table.length; i++) {
-    trs[i] = "<td>"+(table[i]).join("</td><td>")+"</td>";
+    let x= (Math.round(table.length/2) == i ? "bg-light-green" : "");
+    trs[i] = "<td class="+x+">"+(table[i]).join("</td><td class="+x+">")+"</td>";
   }
   console.log("<tr>"+trs.join("</tr><tr>")+"</tr>");
   return "<table><tr>"+trs.join("</tr><tr>")+"</tr></table>";
@@ -42,6 +43,7 @@ function calculate_table() {
 $(document).ready(function() {
   // initialize
   $('#annuity').text('$ '+calculate());
+  $('#range-table').html(calculate_table());
   $('input[name="principal"]').val(data.principal);
   $('input[name="rate"]').val(data.rate);
   $('input[name="periods"]').val(data.periods);
