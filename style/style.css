@@ -30,8 +30,9 @@ label {
 .fl4 {flex:4;}
 
 #range-table {max-width: 450px; font-size: 0.8em;}
-#range-table table {display: table; table-layout: fixed; width: 100%; text-align: right; border-collapse: collapse;}
+#range-table table {display: table; table-layout: fixed; width: 100%; text-align: center; border-collapse: collapse;}
 #range-table table tbody tr:first-child {font-weight:bold; background: #eee;}
 #range-table td { flex-grow: 1; padding-top: 0.5em; padding-bottom: 0.5em; } 
-#range-table tr td:first-child {flex-grow: 2;} 
+#range-table tr td:first-child {flex-grow: 2; text-align: right;} 
 #range-table tr td:last-child {padding-right: 0.5em;} 
+#range-table .hrow .hcol { background-color: #5ab48a; }

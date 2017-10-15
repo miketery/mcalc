@@ -13,7 +13,7 @@ let grid = {};
 function calculate() {
   return finance.AM(data.principal, data.rate, data.periods, 0);
 }
-function calculate_table() {
+function calculate_table(table_id) {
   let rows = get_range(data.principal, dollar_partial, dollar_step_sizes, dollar_steps);
   let cols = get_range(data.rate, rate_partial, rate_step_sizes, rate_steps);
   console.log(rows);
@@ -21,9 +21,8 @@ function calculate_table() {
   let out = [];
   for(let i = 0; i < rows.length; i++) {
     out[i] = [];
-    for(let j = 0; j < cols.length; j++) {
+    for(let j = 0; j < cols.length; j++)
       out[i][j] = Math.round(finance.AM(rows[i], cols[j], data.periods, 0),2);
-    }
   }
   let table = [[''].concat(cols)];
   for(let i = 0; i < rows.length; i++) {
@@ -31,19 +30,20 @@ function calculate_table() {
   }
   console.log(table);
   let trs = [];
-  for(let i = 0; i < table.length; i++) {
-    let x= (Math.round(table.length/2) == i ? "bg-light-green" : "");
-    trs[i] = "<td class="+x+">"+(table[i]).join("</td><td class="+x+">")+"</td>";
-  }
-  console.log("<tr>"+trs.join("</tr><tr>")+"</tr>");
-  return "<table><tr>"+trs.join("</tr><tr>")+"</tr></table>";
-  // 2D array to tr>td>val (row/col/val)
+  for(let i = 0; i < table.length; i++)
+    trs[i] = "<td>"+(table[i]).join("</td><td>")+"</td>";
+  $(table_id).html("<table><tr>"+trs.join("</tr><tr>")+"</tr></table>");
+  console.log($(table_id + ' tr')[0]); //[Math.round(dollar_steps/2)].addClass('highlight');
+  console.log($(table_id + ' tr')[Math.round(dollar_steps/2)]);
+  $(table_id + ' table tr:nth-child('+Math.round(dollar_steps/2+1)+')').addClass('bg-lightest-blue hrow');
+  $(table_id + ' table tr td:nth-child('+Math.round(rate_steps/2+1)+')').addClass('bg-lightest-blue hcol');
+  return true;
 }
 
 $(document).ready(function() {
   // initialize
   $('#annuity').text('$ '+calculate());
-  $('#range-table').html(calculate_table());
+  calculate_table('#range-table');
   $('input[name="principal"]').val(data.principal);
   $('input[name="rate"]').val(data.rate);
   $('input[name="periods"]').val(data.periods);
@@ -51,7 +51,7 @@ $(document).ready(function() {
   $('#calc input').change(function() {
     data[$(this).attr('name')] = parseFloat($(this).val());
     $('#annuity').text('$ '+calculate());
-    $('#range-table').html(calculate_table());
+    calculate_table('#range-table');
   });
 
   $('form#calc').submit(function(e) {
