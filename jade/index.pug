@@ -1,15 +1,16 @@
 extends includes/layout.pug
 block scripts
-  script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
-  script(src='/bower_components/financejs/finance.js')
-  script(src='/script.js')
-  link(rel='stylesheet', href='/style/tachyons.css')
-  link(rel='stylesheet', href='/style/style.css')
+  script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+  script(src='//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js')
+  script(src='bower_components/financejs/finance.js')
+  script(src='script.js')
+  link(rel='stylesheet', href='style/tachyons.css')
+  link(rel='stylesheet', href='style/style.css')
 block title
   title MCalc
 block content
-  .f2.ma2.b M.Calc
-  .main.ma2.pa2.bg-white.shadow-2.pl3
+  .f2.mv2.b.heading.center M.Calc
+  .main.mv2.pa2.bg-white.shadow-2.pl3.center
     .mv2 Calculate your mortgage payments
     form#calc
       div.flex.flex-row
@@ -25,12 +26,10 @@ block content
           input(type='text' name='periods')
       div.flex.flex-row.mt3
         .dib.fl1.mt1
-          button(type='submit').bn.bg-red.white.pa2.tc.fl.shadow-2 To table
+        //-- button(type='submit').bn.bg-red.white.pa2.tc.fl.shadow-2 To table
         .results.fl3.relative
           #annuity.dib.f2.fl1.fr
         .dib.f6.fl1.mt1.tr.pr3
           div Payment
           div (monthly)
-  .table
-    .row.hidden.template
-      .cell 
+  #range-table.mt3.bg-white.shadow-3.center
