@@ -16,8 +16,6 @@ function calculate() {
 function calculate_table(table_id) {
   let rows = get_range(data.principal, dollar_partial, dollar_step_sizes, dollar_steps);
   let cols = get_range(data.rate, rate_partial, rate_step_sizes, rate_steps);
-  console.log(rows);
-  console.log(cols);
   let out = [];
   for(let i = 0; i < rows.length; i++) {
     out[i] = [];
@@ -48,7 +46,7 @@ $(document).ready(function() {
   $('input[name="rate"]').val(data.rate);
   $('input[name="periods"]').val(data.periods);
 
-  $('#calc input').change(function() {
+  $('#calc input').keyup(function() {
     data[$(this).attr('name')] = parseFloat($(this).val());
     $('#annuity').text('$ '+calculate());
     calculate_table('#range-table');
@@ -66,7 +64,6 @@ $(document).ready(function() {
 // steps - rounded step sizes
 function get_range(input, portion, step_sizes = null, steps = 5) {
   let step = input * portion;
-  console.log(step);
   let j = 0;
   if(step_sizes!=null) // if no steps given, skip rounding
     for(let i=0; i < step_sizes.length && step_sizes[i]<=step; i++)
